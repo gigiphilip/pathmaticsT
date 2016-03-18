@@ -16,7 +16,7 @@ namespace pathamticsTest
         private static string file_loc = ConfigurationSettings.AppSettings["test_file_location"];
 
         // method under test
-        public void getDuplicates_By_Stripping_Test()
+        public void getDuplicates_By_Stripping_UnitTest()
         {
             string line; string local_name;            
             HashSet<string> names_hashlist = new HashSet<string>();
