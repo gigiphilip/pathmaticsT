@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace pathmatics
 {
@@ -18,7 +19,15 @@ namespace pathmatics
             {
                 print_line("Duplicates");
 
+                Stopwatch watch = new Stopwatch();
+                watch.Start();
+
                 getDuplicates_By_Stripping();
+
+                watch.Stop();
+                TimeSpan ts = watch.Elapsed;
+                Console.WriteLine(String.Format("Time to process(hh:mm:ss) - {0:00}:{1:00}:{2:00}.{3:00}",
+                    ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds/10));
 
                 // Suspend the screen.
                 Console.ReadLine();
